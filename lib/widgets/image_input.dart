@@ -17,11 +17,11 @@ class _ImageInputState extends State<ImageInput> {
     return Row(
       children: [
         Container(
-          width: 100,
+          width: 150,
           height: 100,
           decoration:
               BoxDecoration(border: Border.all(width: 1, color: Colors.grey)),
-          child: (_storedImage == Null)
+          child: (_storedImage == null)
               ? Text(
                   'No image taken',
                   textAlign: TextAlign.center,
