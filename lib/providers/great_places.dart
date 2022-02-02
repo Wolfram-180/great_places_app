@@ -5,13 +5,16 @@ import 'package:great_places_app/helpers/location_helper.dart';
 
 import '../helpers/db_helper.dart';
 import '../models/place.dart';
-//import '../helpers/location_helper.dart';
 
 class GreatPlaces with ChangeNotifier {
   List<Place> _items = [];
 
   List<Place> get items {
     return [..._items];
+  }
+
+  Place findById(String id) {
+    return _items.firstWhere((place) => place.id == id);
   }
 
   Future<void> addPlace(
