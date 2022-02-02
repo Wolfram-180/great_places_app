@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:great_places_app/models/place.dart';
 import 'package:great_places_app/providers/great_places.dart';
 import 'package:great_places_app/widgets/location_input.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/great_places.dart';
@@ -23,6 +24,16 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
   final _titleController = TextEditingController();
   File? _pickedImage;
   PlaceLocation? _pickedLocation;
+
+  Future<void> requestPermission() async {
+    await Permission.location.request();
+  }
+
+  @override
+  void initState() {
+    requestPermission();
+    super.initState();
+  }
 
   void _selectImage(File pickedImage) {
     _pickedImage = pickedImage;
