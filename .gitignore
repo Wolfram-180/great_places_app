@@ -38,6 +38,7 @@ lib/generated_plugin_registrant.dart
 lib/keys/
 lib/keys
 android/app/src/main/AndroidManifest.xml
+android/app/src/main
 
 # Symbolication related
 app.*.symbols
