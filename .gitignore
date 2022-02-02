@@ -37,8 +37,6 @@ lib/generated_plugin_registrant.dart
 # Keys
 lib/keys/
 lib/keys
-android/app/src/main/AndroidManifest.xml
-android/app/src/main/
 
 # Symbolication related
 app.*.symbols
@@ -50,3 +48,5 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+/android/app/src/main/AndroidManifest.xml
+/android/app/src/main/
