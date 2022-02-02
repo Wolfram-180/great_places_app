@@ -40,6 +40,9 @@ class GreatPlaces with ChangeNotifier {
         'id': newPlace.id,
         'title': newPlace.title,
         'image': newPlace.image.path,
+        'loc_lat': newPlace.location!.latitude,
+        'loc_lng': newPlace.location!.longitude,
+        'address': newPlace.location!.address,
       },
     );
   }
@@ -51,7 +54,11 @@ class GreatPlaces with ChangeNotifier {
           (item) => Place(
             id: item['id'],
             title: item['title'],
-            location: null,
+            location: PlaceLocation(
+              latitude: item['loc_lat'],
+              longitude: item['loc_lng'],
+              address: item['address'],
+            ),
             image: File(item['image']),
           ),
         )

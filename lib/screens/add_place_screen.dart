@@ -22,7 +22,7 @@ class AddPlaceScreen extends StatefulWidget {
 class _AddPlaceScreenState extends State<AddPlaceScreen> {
   final _titleController = TextEditingController();
   File? _pickedImage;
-  late PlaceLocation _pickedLocation;
+  PlaceLocation? _pickedLocation;
 
   void _selectImage(File pickedImage) {
     _pickedImage = pickedImage;
@@ -41,7 +41,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
     Provider.of<GreatPlaces>(context, listen: false).addPlace(
       _titleController.text,
       _pickedImage!,
-      _pickedLocation,
+      _pickedLocation!,
     );
     Navigator.of(context).pop();
   }
